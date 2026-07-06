@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Pedido</title>
+	<link rel="stylesheet" href="../style/pedidos.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Formulario de pedido</h1>
+		<form id="orderForm">
+			<label for="nombre">Nombre completo</label>
+			<input id="nombre" name="nombre" type="text" required>
+
+			<div class="row">
+				<div class="col">
+					<label for="email">Correo electrónico</label>
+					<input id="email" name="email" type="email">
+				</div>
+				<div class="col">
+					<label for="telefono">Teléfono</label>
+					<input id="telefono" name="telefono" type="tel">
+				</div>
+			</div>
+
+			<label for="direccion">Dirección de envío</label>
+			<textarea id="direccion" name="direccion" rows="2"></textarea>
+
+			<label>Productos</label>
+			<div class="items" id="items"></div>
+			<div style="margin-top:8px">
+				<button type="button" id="addItem">Añadir producto</button>
+				<button type="button" id="clearItems" class="secondary">Limpiar</button>
+			</div>
+
+			<div class="summary" id="summary">
+				Total: $<span id="total">0.00</span>
+			</div>
+
+			<div style="margin-top:14px;display:flex;gap:8px;justify-content:flex-end">
+				<button type="submit">Enviar pedido</button>
+			</div>
+		</form>
+	</div>
+	<script src="../app/pedidos.js"></script>
+</body>
+</html>

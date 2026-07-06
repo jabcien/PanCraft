@@ -1,0 +1,658 @@
+/* RESET Y VARIABLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #F87171;
+    --dark-color: #1A202C;
+    --light-color: #F7FAFC;
+    --text-color: #4A5568;
+    --border-radius: 12px;
+    --transition: all 0.3s ease;
+    --accent-color: #6EE7B7;
+    --warning-color: #FBBF24;
+    --secondary-color: #D8B4FE;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+    background-color: var(--light-color);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.logo h1 {
+    font-size: 24px;
+    margin: 0;
+    font-family: 'Georgia', serif;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.btn-pedido {
+    background-color: var(--dark-color);
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-pedido:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+/* HERO SECTION */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 60px 0;
+    background-image: url(../img/Gemini_Generated_Image_6iuzoq6iuzoq6iuz.png);
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position: right;
+}
+
+.hero-content {
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-size: 70px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-family: 'Algerian', serif;
+    
+}
+.hero-content p {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fbb;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    font-family: 'Algerian', serif;
+}
+
+
+.btn-menu {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.btn-menu:hover {
+    background-color: var(--dark-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+}
+
+
+/* SECCIÓN FILOSOFÍA */
+.filosofia {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.filosofia h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+    font-family: 'Georgia', serif;
+}
+
+.filosofia blockquote {
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 60px;
+    padding: 0 40px;
+    font-family: 'Georgia', serif;
+}
+
+.filosofia-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.filosofia-item {
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f7f4;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.filosofia-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.filosofia-item .icon {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.filosofia-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--dark-color);
+}
+
+.filosofia-item p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* SECCIÓN FAVORITOS */
+.favoritos {
+    padding: 80px 0;
+    background-color: #f5f1e8;
+}
+
+.favoritos h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+    font-family: 'Georgia', serif;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.producto-card {
+    background-color: #2B2B2B;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: var(--transition);
+    color: white;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.producto-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.producto-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.producto-card:hover .producto-image img {
+    transform: scale(1.05);
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.producto-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.producto-card p {
+    padding: 0 20px;
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.precio {
+    padding: 15px 20px 20px !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: var(--primary-color) !important;
+}
+
+/* SECCIÓN HORARIOS */
+.horarios {
+    padding: 80px 0;
+    background-color: var(--light-color);
+}
+
+.horarios h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: var(--dark-color);
+    font-family: 'Georgia', serif;
+}
+
+.horarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.horario-item {
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f7f4;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.horario-item:hover {
+    background-color: var(--light-color);
+    transform: translateY(-3px);
+}
+
+.horario-icon {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.horario-hora {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.horario-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section {
+    padding: 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-logo h3 {
+    font-size: 20px;
+    font-family: 'Georgia', serif;
+    margin: 0;
+}
+
+.footer-section h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.footer-section p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 8px;
+}
+
+.footer-section.social {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.footer-section.social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(212, 165, 116, 0.2);
+    border-radius: 50%;
+    color: var(--primary-color);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.footer-section.social a:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(212, 165, 116, 0.2);
+    padding-top: 20px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 28px;
+    }
+
+    .hero-image {
+        height: 300px;
+    }
+
+    .filosofia-items {
+        grid-template-columns: 1fr;
+    }
+
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .horarios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .filosofia h2,
+    .favoritos h2,
+    .horarios h2 {
+        font-size: 28px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .btn-pedido {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav {
+        display: none;
+    }
+
+    .header-content {
+        justify-content: space-between;
+    }
+
+    .hero-content h2 {
+        font-size: 20px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .filosofia blockquote {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .producto-card h3 {
+        font-size: 16px;
+    }
+
+    .producto-card p {
+        font-size: 12px;
+    }
+}
+
+/* ANIMACIONES */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filosofia-item,
+.producto-card,
+.horario-item {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.filosofia-item:nth-child(1) { animation-delay: 0.1s; }
+.filosofia-item:nth-child(2) { animation-delay: 0.2s; }
+.filosofia-item:nth-child(3) { animation-delay: 0.3s; }
+
+.producto-card:nth-child(1) { animation-delay: 0.1s; }
+.producto-card:nth-child(2) { animation-delay: 0.2s; }
+.producto-card:nth-child(3) { animation-delay: 0.3s; }
+
+.horario-item:nth-child(1) { animation-delay: 0.1s; }
+.horario-item:nth-child(2) { animation-delay: 0.2s; }
+.horario-item:nth-child(3) { animation-delay: 0.3s; }
+.horario-item:nth-child(4) { animation-delay: 0.4s; }
+main {
+    padding: 40px 0;
+}
+
+.menu-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif; /* Una fuente elegante para títulos */
+    font-size: 3.2em;
+    color: var(--dark-color);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.menu-category {
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+.category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5em;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    display: inline-block; /* Para que el borde solo ocupe el ancho del texto */
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas adaptables */
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Para que las imágenes cubran el espacio sin distorsionarse */
+    border-bottom: 1px solid #eee;
+}
+
+.product-info {
+    padding: 20px;
+    flex-grow: 1; /* Para que la info ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    color: var(--dark-color);
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 0.95em;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.product-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6em;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-align: right;
+    margin-top: auto; /* Empuja el precio hacia abajo */
+}

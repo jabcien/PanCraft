@@ -1,0 +1,229 @@
+/* --- VARIABLES CSS (Asegúrate de que estas estén al principio de tu archivo CSS principal ) --- */
+:root {
+    --primary-color: #e67e22; /* Naranja panadería */
+    --text-color: #333333;
+    --light-color: #ffffff;
+    --dark-color: #2c3e50;
+    --background-light: #f8f8f8; /* Fondo suave para la página */
+    --border-color: #d6d8e0;
+    --shadow-color: rgba(0, 0, 0, 0.06);
+    --summary-bg: #f3f4f6;
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Montserrat', sans-serif; /* Fuente principal de Pancraft */
+    margin: 0;
+    padding: 20px;
+    background: var(--background-light);
+    color: var(--text-color);
+}
+
+/* --- Contenedor Principal del Formulario --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: var(--light-color);
+    padding: 30px; /* Un poco más de padding */
+    border-radius: 10px; /* Bordes más suaves */
+    box-shadow: 0 4px 15px var(--shadow-color); /* Sombra más pronunciada */
+}
+
+/* --- Títulos y Etiquetas --- */
+h1 {
+    font-family: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    margin-top: 0;
+    color: var(--dark-color);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px; /* Más espacio */
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* --- Campos de Entrada (Inputs, Select, Textarea) --- */
+input[type=text],
+input[type=email],
+input[type=tel],
+select,
+textarea {
+    width: 100%;
+    padding: 12px; /* Más padding */
+    border: 1px solid var(--border-color);
+    border-radius: 8px; /* Bordes más suaves */
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--light-color);
+}
+
+input[type=text]:focus, 
+input[type=email]:focus, 
+input[type=tel]:focus, 
+select:focus, 
+textarea:focus {
+    border-color: var(--primary-color); /* Resaltar al enfocar */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2); /* Sombra suave */
+}
+
+/* --- Diseño de Filas y Columnas --- */
+.row {
+    display: flex;
+    gap: 20px; /* Más espacio entre columnas */
+}
+
+.row .col {
+    flex: 1;
+}
+
+/* --- Lista de Productos/Items --- */
+/* --- LISTA DE PRODUCTOS (Corregido) --- */
+.items {
+    margin-top: 25px;
+    border-top: 2px solid var(--border-color);
+    padding-top: 20px;
+    width: 100%; /* Aseguramos que ocupe todo el ancho */
+}
+
+.item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 15px;
+    background-color: #f9f9f9; /* Un gris muy sutil */
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+}
+
+/* Ajuste para el selector de productos */
+.item select {
+    flex: 3; /* Le damos más espacio al nombre del producto */
+    min-width: 200px; /* Evitamos que se encoja demasiado */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95em;
+}
+
+/* Ajuste para el campo de cantidad */
+.item input[type=number] {
+    flex: 1;
+    min-width: 60px;
+    max-width: 100px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Ajuste para el botón eliminar */
+.item button.secondary {
+    flex: 0.5;
+    min-width: 90px;
+    background-color: #e74c3c; /* Rojo para identificar eliminar */
+    padding: 10px;
+    margin-top: 0; /* Quitamos el margen superior del botón general */
+}
+
+.item button.secondary:hover {
+    background-color: #c0392b;
+}
+
+/* Estilo para los botones de control (Agregar/Limpiar) */
+.order-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#addItem {
+    background-color: #27ae60; /* Verde para agregar */
+    margin-top: 0;
+}
+
+#addItem:hover {
+    background-color: #219150;
+}
+
+#clearItems {
+    background-color: #95a5a6;
+    margin-top: 0;
+}
+/* --- Botones --- */
+button {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border: none;
+    padding: 12px 20px; /* Más padding */
+    border-radius: 8px; /* Bordes más suaves */
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Botón de ancho completo */
+    margin-top: 25px;
+}
+
+button:hover {
+    background: #d66e1a; /* Un tono más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto al pasar el ratón */
+}
+
+button.secondary {
+    background: var(--dark-color);
+}
+
+button.secondary:hover {
+    background: #4b5563;
+}
+
+/* --- Resumen del Pedido --- */
+.summary {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: var(--summary-bg);
+    border: 1px solid var(--border-color);
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.summary h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .row .col {
+        margin-bottom: 15px;
+    }
+    .item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .item select, .item input {
+        width: 100%;
+    }
+    button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}
+
+/* Definición de variables RGB para sombras */
+:root {
+    --primary-color-rgb: 230, 126, 34; /* RGB de --primary-color */
+}
